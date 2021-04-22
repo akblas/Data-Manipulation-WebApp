@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<head>
+<link href="style.css" rel="stylesheet" type="text/css">
+<script src="javascript.js" async></script>
+	<title>final project</title>
+</head>
+
+	<body>
+        <div>
+            <h1>Data Encryption <br> & <br> Decryption
+            </h1>
+        </div>
+        <div>
+            <input type="radio" name="decryption" value="Decryption" id="decry" checked>
+		    <label for="decry">Decryption</label><br><br>
+            <input type="radio" name="decryption" value="Encryption" id="encry" checked>
+		    <label for="encry">Encyption</label><br><br>
+            <input type="radio" name="decryption" value="Hash" id="hash" checked>
+		    <label for="hash">Hash</label><br><br>
+        </div>
+        <div>
+            <p>Encryption <br> method</p>
+		    <input type="radio" name="encryptionMethod" value="DES" id="des" checked>
+		    <label for="des">DES</label><br><br>
+		    <input type="radio" name="encryptionMethod" value="AES" id="aes">
+		    <label for="aes">AES</label><br><br>
+            <input type="radio" name="encryptionMethod" value="MD5" id="md5">
+		    <label for="md5">MD5</label><br><br>
+            <input type="radio" name="encryptionMethod" value="SHA256" id="sha256">
+            <label for="sha256">SHA256</label><br><br>
+            <input type="radio" name="encryptionMethod" value="KeywordCipher" id="keycip">
+		    <label for="keycip">Keyword Cipher</label><br><br>
+        </div>
+        <div id="filesubmit">
+            <input type="file" class="file-select" accept="image/*"/>
+            <button class="file-submit">SUBMIT</button>
+          </div>
+		 <div><br><br><br><br><br><br><br><br><br><br>
+			<input id=button type="button" value="Submit" onclick="run()"/>
+
+         </div> 
+		 
+	</body>
+</html>
