@@ -14,8 +14,10 @@
         </div>
         <div>
             <h2>Progress</h2>
-        </div>
-        <div>
+            <div id = "progress">
+                <label for="file">Downloading progress:</label>
+                <progress id="file" value="32" max="100"> 32% </progress>
+            </div>
             <input type="radio" name="decryption" value="Decryption" id="decry" checked>
 		    <label for="decry">Decryption</label><br><br>
             <input type="radio" name="decryption" value="Encryption" id="encry" checked>
@@ -23,6 +25,15 @@
             <input type="radio" name="decryption" value="Hash" id="hash" checked>
 		    <label for="hash">Hash</label><br><br>
         </div>
+        <div id="filesubmit">
+            <input type="file" class="file-select" accept="All files/*"/>
+            <button class="file-submit">SUBMIT</button>
+            <div id = "key">
+                <p>Keyword/Public key</p>
+                <input type="text" name = "Keyword" id="keyword" placeholder="Click here to type...">
+            </div>
+          </div>
+        
         <div>
             <p>Encryption <br> method</p>
 		    <input type="radio" name="encryptionMethod" value="DES" id="des" checked>
@@ -35,12 +46,20 @@
             <label for="sha256">SHA256</label><br><br>
             <input type="radio" name="encryptionMethod" value="KeywordCipher" id="keycip">
 		    <label for="keycip">Keyword Cipher</label><br><br>
+            <div id = "outputfile">
+                <p>Output(files)</p>
+                <p id = "fileOutput"></p>
+                <br><br><br><br><br><br>
+                <input id=download type="button" value="Download">
+            </div>
         </div>
-        <div id="filesubmit">
-            <input type="file" class="file-select" accept="image/*"/>
-            <button class="file-submit">SUBMIT</button>
-          </div>
-		 <div><br><br><br><br><br><br><br><br><br><br>
+        <div id = "output">
+            <p>Output(Hashes and keys)</p>
+            <p id = "Outputhash">Hash:</p>
+            <p id = "OutputPubKey">Public Key:</p>
+            <p id = "OutputKeyWord">Keyword:</p>
+        </div>
+		 <div>
 			<input id=button type="button" value="Submit" onclick="run()"/>
 
          </div> 
