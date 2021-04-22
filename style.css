@@ -25,3 +25,6 @@ body {
     p {
         text-decoration: underline;
     }
+    h2 {
+        text-align: right;
+    }
