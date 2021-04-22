@@ -1,0 +1,27 @@
+body {
+    background-color: rgb(104, 19, 19); 
+    text-align: left;
+    font-size: x-large; 
+    }
+    div {
+        color: white;
+    }
+    h1 {
+        color: white;
+        text-align: center;
+    }
+    #button {
+        background-color: #be9b25;
+        font-size: 24px;
+        text-align: center;
+        margin: 0 auto;
+        display: block;
+    }
+    #filesubmit{
+        text-align: center;
+        background-color: white;
+        
+    }
+    p {
+        text-decoration: underline;
+    }
