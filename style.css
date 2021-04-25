@@ -18,12 +18,11 @@ body {
         display: block;
     }
     #filesubmit{
-        text-align: center;
-        font-size: 12px;
-        background-color: white;
-        width: 400px;
-        height: 50px;
-        margin-left: 700px;
+        text-align: left;
+        font-size: 24px;
+        width: 200px;
+        height: 75px;
+        margin-left: 10%px;
 
     }
     p {
@@ -36,9 +35,8 @@ body {
         text-align: right;
     }
     #key {
-        text-align: right;
-        margin-left: 1000px;
-        font-size: 25px;
+        text-align: left;
+        font-size: 24px;
     }
     #output {
         text-align: right;
