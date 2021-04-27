@@ -63,7 +63,8 @@ body {
         background-color: rgb(110, 17, 177);
         font-size: 24px;
         text-align: center;
+        color: black;
         margin: 0 auto;
-        display: block;
+        border: blue, 40, 20, 40, 20;
     }
               
