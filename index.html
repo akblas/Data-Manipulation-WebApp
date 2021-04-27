@@ -1,71 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
-<meta charset="UTF-8">
-<head>
-<link href="style.css" rel="stylesheet" type="text/css">
-<script src="javascript.js" async></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<title>final project</title>
-</head>
+<html>
+
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript File Encryption App</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<link href="http://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+
+	</head>
 
 	<body>
-        <div>
-            <h1>Data Encryption <br> & <br> Decryption
-            </h1>
-        </div>
-        <div>
-            <h2>Progress</h2>
-            <div id = "progress">
-                <label for="file">Downloading progress:</label>
-                <progress id="file" value="32" max="100"> 32% </progress>
-            </div>
-            <input type="radio" name="encryption" value="Encryption" id="encry" checked>
-		    <label for="encry">Encyption</label><br><br>
-            <input type="radio" name="decryption" value="Decryption" id="decry" checked>
-		    <label for="decry">Decryption</label><br><br>
-            <input type="radio" name="decryption" value="Hash" id="hash" checked>
-		    <label for="hash">Hash</label><br><br>
-        </div>
-        <div id="filesubmit">
- 		<label for="file">File</label>
-                <input type="file" id="file" name="file" class="file-select" accept="All files/*" required>
-                <br>
-                <div id="key">
-                <label for="keywrd">Keyword</label>
-              <input  type="usrmame" id="keywd" name="keywd" pattern="" title="Can only have a letter appear once in the word(No numbers or special characters)." required>
-            </div>
-          </div>
-        
-        <div>
-	    <br>
-            <p>Encryption <br> method</p>
-		    <input type="radio" name="encryptionMethod" value="DES" id="des" checked>
-		    <label for="des">DES</label><br><br>
-		    <input type="radio" name="encryptionMethod" value="AES" id="aes">
-		    <label for="aes">AES</label><br><br>
-            <input type="radio" name="encryptionMethod" value="MD5" id="md5">
-		    <label for="md5">MD5</label><br><br>
-            <input type="radio" name="encryptionMethod" value="SHA256" id="sha256">
-            <label for="sha256">SHA256</label><br><br>
-            <input type="radio" name="encryptionMethod" value="KeywordCipher" id="keycip">
-		    <label for="keycip">Keyword Cipher</label><br><br>
-	     <div>
-                <input id="submit" type="button" value="Submit" onclick="run()"/>
-             </div> 
-            <div id = "outputfile">
-                <p>Output(files)</p>
-                <p id = "fileOutput"></p>
-                <br><br><br><br><br><br>
-                <a id=download href=""">Download</a>
-            </div>
-        </div>
-        <div id = "output">
-            <p>Output(Hashes and keys)</p>
-            <p id = "Outputhash">Hash:</p>
-            <p id = "OutputPubKey">Public Key:</p>
-            <p id = "OutputKeyWord">Keyword:</p>
-        </div>
-		 
+
+		<a class="back"></a>
+
+		<div id="stage">
+
+			<div id="step1">
+				<div class="content">
+					<h1>What do you want to do?</h1>
+					<a class="button encrypt green">Encrypt a file</a>
+					<a class="button decrypt magenta">Decrypt a file</a>
+				</div>
+			</div>
+
+			<div id="step2">
+
+				<div class="content if-encrypt">
+					<h1>Choose which file to encrypt</h1>
+					<h2>An encrypted copy of the file will be generated. No data is sent to our server.</h2>
+					<a class="button browse blue">Browse</a>
+
+					<input type="file" id="encrypt-input" />
+				</div>
+
+				<div class="content if-decrypt">
+					<h1>Choose which file to decrypt</h1>
+					<h2>Only files encrypted by this tool are accepted.</h2>
+					<a class="button browse blue">Browse</a>
+
+					<input type="file" id="decrypt-input" />
+				</div>
+
+			</div>
+
+			<div id="step3">
+
+				<div class="content if-encrypt">
+					<h1>Enter a pass phrase</h1>
+					<h2>This phrase will be used as an encryption key. Write it down or remember it; you won't be able to restore the file without it. </h2>
+
+					<input type="password" />
+					<a class="button process red">Encrypt!</a>
+				</div>
+
+				<div class="content if-decrypt">
+					<h1>Enter the pass phrase</h1>
+					<h2>Enter the pass phrase that was used to encrypt this file. It is not possible to decrypt it without it.</h2>
+					<input type="password" />
+					<a class="button process red">Decrypt!</a>
+				</div>
+
+			</div>
+
+			<div id="step4">
+
+				<div class="content">
+					<h1>Your file is ready!</h1>
+					<a class="button download green">Download</a>
+				</div>
+
+			</div>
+		</div>
+
 	</body>
+
+	<!-- Include the AES algorithm of the crypto library -->
+	<script src="js/aes.js"></script>
+
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="js/script.js"></script>
+
 </html>
